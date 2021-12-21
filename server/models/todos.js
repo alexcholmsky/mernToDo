@@ -15,7 +15,17 @@ title: {
 type: String,
 required: true
 },
-content: String
+content: { type: String},
+url_one: { type: String},
+url_one_title: { type: String},
+url_one_thumbnail: { type: String},
+url_two: { type: String},
+url_two_title: { type: String},
+url_two_thumbnail: { type: String},
+url_three: { type: String},
+url_three_title: { type: String},
+url_three_thumbnail: { type: String}
+
 }, { timestamps: true });
 const Todo = mongoose.model('Todo', todoSchema)
 export default Todo; 
