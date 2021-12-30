@@ -1,0 +1,36 @@
+import * as api from '../api';
+//imports all the functions from the /api file
+export const readTodos = async () => {
+try {
+const { data } = await api.readTodos()
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const createTodo = async (todo) => {
+try {
+        console.log('createTodo at clientside:',)
+    const { data } = await api.createTodo(todo);
+        return data;
+    } catch (error) {
+        console.log(error)
+        }
+    }
+
+export const updateTodo = async (id,todo) => {
+    try {
+        const { data } = await api.updateTodo(id,todo);
+            return data;
+        } catch (error) {
+            console.log(error)
+            }
+        }
+
+export const deleteTodo = async (id) => {
+    try {
+         await api.deleteTodo(id);
+        } catch (error) {
+            console.log(error)
+            }
+        }

@@ -1,0 +1,43 @@
+.videoEle{
+    border:#4db6ac ;
+    border-style: outset;
+    border-width: 3px; 
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+
+  }
+
+.thumbnail{
+  border-radius: 8px;
+  height: auto;
+  width: 10%;
+  text-align: left;
+}
+
+.center {
+    text-align: center;
+    display: block;
+    margin: auto;
+    
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'box';
+    height: 100px;
+    vertical-align: middle;
+  }
+  .grid-container > div {
+    text-align: center;
+    font-size: 30px;
+  }
+
+.boxed { grid-area: box; }
+
+
+.title{
+    color: #4db6ac ;
+}
