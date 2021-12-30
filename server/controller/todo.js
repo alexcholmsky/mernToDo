@@ -4,6 +4,7 @@ import Todo from '../models/todos.js';
 export const readTodos = async (req, res) => {
 try {
 const Todos = await Todo.find();
+console.log("todos read ", Todos)
 /*method that comes with a model:
 
 Creates a find query: 
@@ -22,6 +23,7 @@ res.status(404).json({ message: error.message });
 export const createTodo = async (req, res) => {
 //calls constructor to create to-do tasks
     const todo = new Todo(req.body);
+    console.log("Creating todo: ", todo)
 /* req.body allows you to access data as a json object from the client
     - used to receive data through post and put requests
     - in this case it will be forms from the client side
@@ -36,12 +38,12 @@ try {
 
 export const updateTodo = async (req, res) => {
     const { id } = req.params;
-    const { title, content } = req.body;
+    const { title,content,url_one,url_one_title,url_one_thumbnail,url_two,url_two_title,url_two_thumbnail,url_three,url_three_title,url_three_thumbnail} = req.body;
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).send(`No todo with id: ${id}`);
     } 
     //don't need else in if-statement
-    const updatedTodo = { title,content, _id: id };
+    const updatedTodo = { title,content,url_one,url_one_title,url_one_thumbnail,url_two,url_two_title,url_two_thumbnail,url_three,url_three_title,url_three_thumbnail,_id: id };
         await Todo.findByIdAndUpdate(id, updatedTodo, { new: true });
             res.json(updatedTodo);
     }
